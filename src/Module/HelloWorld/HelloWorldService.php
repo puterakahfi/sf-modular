@@ -10,8 +10,11 @@ namespace App\Module\HelloWorld;
 final class HelloWorldService
 {
 
+    private string $message;
+
     public function sayHello()
     {
+
         return 'Hello World from service';
     }
 }

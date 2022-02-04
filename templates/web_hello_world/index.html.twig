@@ -33,12 +33,16 @@
 					<a href="{{ '/data/www/dwc/sf-modular/templates/web_hello_world/index.html.twig'|file_link(0) }}">templates/web_hello_world/index.html.twig</a>
 				</code>
 			</li>
-
-			<li>The use case response is:
+			<li>The use case response is from Hello World Service:
 				<code>
-					{{message}}
+					<a href="{{ '/data/www/dwc/sf-modular/src/Module/HelloWorld/HelloWorldService.php'|file_link(0) }}">src/Module/HelloWorld/HelloWorldService.php</a>
 				</code>
 			</li>
-		</ul>
-	</div>
-{% endblock %}
+		</li>
+		<li>The use case response:
+			<code>
+				{{message}}
+			</code>
+		</li>
+	</ul>
+</div>{% endblock %}
