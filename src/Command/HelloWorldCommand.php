@@ -32,7 +32,7 @@ class HelloWorldCommand extends Command
     {
         $this
             ->addArgument('arg1', InputArgument::OPTIONAL, 'Argument description')
-            ->addOption('provider', null, InputOption::VALUE_OPTIONAL, 'Data Provider', 'api');
+            ->addOption('provider', null, InputOption::VALUE_OPTIONAL, 'Data Provider',  null);
     }
 
     protected function execute(InputInterface $input, OutputInterface $output): int

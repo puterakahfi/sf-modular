@@ -7,6 +7,7 @@ use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
 use App\Module\HelloWorld\HelloWorldService;
+use Symfony\Component\HttpFoundation\Request;
 
 class AdminHelloWorldController extends AbstractController
 {
@@ -20,9 +21,10 @@ class AdminHelloWorldController extends AbstractController
     }
 
     #[Route('/admin/hello-world', name: 'web_hello_world')]
-    public function index(): Response
+    public function index(Request $request): Response
     {
-        $response = $this->helloWorldService->sayHelloWorld();
+        $provider = $request->query->get('provider');
+        $response = $this->helloWorldService->sayHelloWorld($provider);
         return $this->render('web_hello_world/index.html.twig', [
             'controller_name' => 'WebHelloWorldController',
             'message' => $response

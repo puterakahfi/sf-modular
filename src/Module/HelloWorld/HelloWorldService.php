@@ -26,7 +26,7 @@ final class HelloWorldService
         $this->repositoryFactory = $repositoryFactory;
     }
 
-    public function sayHelloWorld($provider = 'api')
+    public function sayHelloWorld($provider = null)
     {
         $this->repository = $this->repositoryFactory->createRepository($provider);
         return $this->repository->sayHello();
