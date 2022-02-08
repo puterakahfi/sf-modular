@@ -8,7 +8,7 @@ use Symfony\Component\Routing\Annotation\Route;
 
 use App\Module\HelloWorld\HelloWorldService;
 
-class WebHelloWorldController extends AbstractController
+class AdminHelloWorldController extends AbstractController
 {
 
 
@@ -19,10 +19,10 @@ class WebHelloWorldController extends AbstractController
         $this->helloWorldService = $useCase;
     }
 
-    #[Route('/web/hello-world', name: 'web_hello_world')]
+    #[Route('/admin/hello-world', name: 'web_hello_world')]
     public function index(): Response
     {
-        $response = $this->helloWorldService->sayHello();
+        $response = $this->helloWorldService->sayHelloWorld();
         return $this->render('web_hello_world/index.html.twig', [
             'controller_name' => 'WebHelloWorldController',
             'message' => $response

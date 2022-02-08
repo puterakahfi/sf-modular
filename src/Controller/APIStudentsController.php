@@ -9,7 +9,7 @@ use Symfony\Component\Routing\Annotation\Route;
 use App\Module\HelloWorld\HelloWorldService;
 use Symfony\Component\HttpFoundation\Request;
 
-class APIHelloWorldController extends AbstractController
+class APIStudentsController extends AbstractController
 {
 
 
@@ -20,7 +20,7 @@ class APIHelloWorldController extends AbstractController
         $this->helloWorldService = $useCase;
     }
 
-    #[Route('/api/hello-worlds', name: 'api_hello_world')]
+    #[Route('/api/students', name: 'api_students')]
     public function index(Request $request): Response
     {
         $provider = $request->query->get('provider');

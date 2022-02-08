@@ -2,6 +2,9 @@
 
 namespace App\Module\HelloWorld;
 
+use App\Module\HelloWorld\Repository\HelloWorldRepositoryFactory;
+use App\Module\HelloWorld\Repository\HelloWorldRepositoryInterface;
+use ProxyManager\ProxyGenerator\ValueHolder\MethodGenerator\Constructor;
 
 /**
  * Appplication logic service
@@ -12,9 +15,20 @@ final class HelloWorldService
 
     private string $message;
 
-    public function sayHello()
-    {
+    private HelloWorldRepositoryInterface $repository;
 
-        return 'Hello World from service';
+    private HelloWorldRepositoryFactory $repositoryFactory;
+
+
+    public function __construct(HelloWorldRepositoryInterface $repository, HelloWorldRepositoryFactory $repositoryFactory)
+    {
+        $this->repository = $repository;
+        $this->repositoryFactory = $repositoryFactory;
+    }
+
+    public function sayHelloWorld($provider = 'api')
+    {
+        $this->repository = $this->repositoryFactory->createRepository($provider);
+        return $this->repository->sayHello();
     }
 }

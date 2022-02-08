@@ -23,26 +23,27 @@
 
 		This friendly message is coming from:
 		<ul>
-			<li>Your controller at
+			{# <li>Your controller at
+							<code>
+								<a href="{{ '/data/www/dwc/sf-modular/src/Controller/WebHelloWorldController.php'|file_link(0) }}">src/Controller/WebHelloWorldController.php</a>
+							</code>
+						</li>
+						<li>Your template at
+							<code>
+								<a href="{{ '/data/www/dwc/sf-modular/templates/web_hello_world/index.html.twig'|file_link(0) }}">templates/web_hello_world/index.html.twig</a>
+							</code>
+						</li>
+						<li>The use case response is from Hello World Service:
+							<code>
+								<a href="{{ '/data/www/dwc/sf-modular/src/Module/HelloWorld/HelloWorldService.php'|file_link(0) }}">src/Module/HelloWorld/HelloWorldService.php</a>
+							</code>
+						</li>
+					</li> #}
+			<li>The use case response:
 				<code>
-					<a href="{{ '/data/www/dwc/sf-modular/src/Controller/WebHelloWorldController.php'|file_link(0) }}">src/Controller/WebHelloWorldController.php</a>
+					{{message}}
 				</code>
 			</li>
-			<li>Your template at
-				<code>
-					<a href="{{ '/data/www/dwc/sf-modular/templates/web_hello_world/index.html.twig'|file_link(0) }}">templates/web_hello_world/index.html.twig</a>
-				</code>
-			</li>
-			<li>The use case response is from Hello World Service:
-				<code>
-					<a href="{{ '/data/www/dwc/sf-modular/src/Module/HelloWorld/HelloWorldService.php'|file_link(0) }}">src/Module/HelloWorld/HelloWorldService.php</a>
-				</code>
-			</li>
-		</li>
-		<li>The use case response:
-			<code>
-				{{message}}
-			</code>
-		</li>
-	</ul>
-</div>{% endblock %}
+		</ul>
+	</div>
+{% endblock %}

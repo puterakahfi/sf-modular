@@ -32,7 +32,7 @@ class HelloWorldCommand extends Command
     {
         $this
             ->addArgument('arg1', InputArgument::OPTIONAL, 'Argument description')
-            ->addOption('option1', null, InputOption::VALUE_NONE, 'Option description');
+            ->addOption('provider', null, InputOption::VALUE_OPTIONAL, 'Data Provider', 'api');
     }
 
     protected function execute(InputInterface $input, OutputInterface $output): int
@@ -44,11 +44,11 @@ class HelloWorldCommand extends Command
             $io->note(sprintf('You passed an argument: %s', $arg1));
         }
 
-        if ($input->getOption('option1')) {
+        if ($input->getOption('provider')) {
             // ...
         }
 
-        $io->success($this->helloWorldService->sayHello());
+        $io->success($this->helloWorldService->sayHelloWorld($input->getOption('provider')));
 
         return Command::SUCCESS;
     }
