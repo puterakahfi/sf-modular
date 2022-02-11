@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Presentation\API\HelloWorld;
+namespace App\Presentation\API;
 
 use App\Module\HelloWorld\HelloWorldService;
 use Symfony\Component\HttpFoundation\Request;

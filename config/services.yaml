@@ -21,6 +21,6 @@ services:
             - "../src/Kernel.php"
 
     App\Module\HelloWorld\Repository\HelloWorldRepositoryInterface: '@App\Module\HelloWorld\Repository\APIHelloWorldRepository'
-
+    App\Module\Student\Repository\StudentRepositoryInterface: '@App\Module\Student\Repository\DBStudentRepository'
     # add more service definitions when explicit configuration is needed
     # please note that last definitions always *replace* previous ones
